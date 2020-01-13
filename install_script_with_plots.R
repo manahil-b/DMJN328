@@ -19,5 +19,6 @@ library(magrittr)
 var3<-sample(c('A', 'B', 'C'), 100, replace=T)
 var4<-Recode(var3, "'A'='Apple'; 'B'='Banana' ; 'C'='Cactus'")
 data.frame(var3, var4) %>% 
-  ggplot(., aes(x=var4))+geom_bar()+labs(title='IF you get this plot too things are working. ')
-ggsve('test_plot_2.png')
+  ggplot(., aes(x=var4))+geom_bar()+labs(title='If you get this plot too things are working. ')
+ggsave('test_plot_2.png')
+
