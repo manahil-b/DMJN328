@@ -1,0 +1,37 @@
+---
+title: "Working Directories"
+author: "Simon Kiss"
+date: "21/01/2020"
+output: pdf_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, tidy=T)
+```
+
+## Setting Working Directories
+I realize that I made a bit of a mistake. Up until now I have avoided getting into the nitty gritty of teaching about how to navigate working directories in R and it caused a small issue with the code in last week's chapter. I think I should tackle this explicitly now to really address this. 
+
+Put simply the working directory is where you are working in your computer's file directory structure. 
+
+Now, up until now I have had you set the working directory by asking that you open an RStudio project file. When you do that, the working directory is the directory of the project file. If you look up in the top-right corner of RStudio, you will see which project file you have opened. 
+You can find out what working directory you are in by typing the following:
+```{r getwd, results='markup'}
+getwd()
+```
+
+See how the working directory is the same as the project file?
+
+Now,in the R code for importing excel files from last class there was a small issue. 
+
+I asked you - reasonably it turns out - to start by opening the .Rproj file for chapter 2. But the R code that has been provided for each video and lesson is in a *subdirectory* of the chapter 2 file. 
+
+And if you open up the code in the file `excel.R` you see the first command is to open this file: 
+
+Now, this isn't going to work.  First I'm going to set the working directory to be Chapter 2, just like I had opened the Chapter 2 .rproj file. 
+
+```{r setwd, eval=F}
+setwd('/Users/skiss/OneDrive - Wilfrid Laurier University/Courses/DMJN328/learnr_journalism/learn-chapter-2-master')
+```
+
+

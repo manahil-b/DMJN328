@@ -1,4 +1,5 @@
 # On a mac, it'd look like this
+getwd()
 setwd("~/projects/learn-r-journalism")
 
 # On a pc, it might look like this

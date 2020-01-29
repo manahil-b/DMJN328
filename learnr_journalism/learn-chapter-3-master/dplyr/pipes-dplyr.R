@@ -1,3 +1,4 @@
+setwd('dplyr/')
 
 source("import_murders.R")
 
@@ -28,20 +29,18 @@ df3 <- filter(murders, Relationship_label %in% c("Husband", "Boyfriend") |
 filter(murders, fstate_label=District of Columbia)
 
 # RIGHT
-filter(murders, fstate_label="District of Columbia")
+filter(murders, fstate_label=="District of Columbia")
 
 # WRONG
 
 filter(murders, 1980 < year < 1990)
 
 # RIGHT
-
-filter(murders, 1980 < year, year < 1990)
+filter(murders, 1980 < Year, Year < 1990)
 
 # Not WRONG but INEFFICIENT to type out
 
-filter(murders, VicRace_label=="Black" | VicRace_label="Unknown" | 
-  VicRace_label=="Asian or Pacific Islander")
+filter(murders, VicRace_label=="Black" | VicRace_label=="Unknown" | VicRace_label=="Asian or Pacific Islander")
 
 # RIGHT
 filter(murders, VicRace_label %in% c("Black", "Unknown", "Asian or Pacific Islander"))
@@ -66,7 +65,9 @@ View(df3_narrow)
 
 # This extracts all variables with names that contain "_label"
 
-labels_only_columns <- select(murders(contains("_label")))
+labels_only_columns 
+
+select(murders, contains("_label"))
 str(labels_only_columns)
 
 ## arrange()
