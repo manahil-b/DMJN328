@@ -1,4 +1,4 @@
-
+setwd("tidyr_joins/")
 source("import_murders.R")
 
 murders %>% 
@@ -180,3 +180,4 @@ right_join(left, right)
 full_join(left, right)
 
 inner_join(left, right)
+left_join(left,right)
