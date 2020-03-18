@@ -1,0 +1,81 @@
+---
+title: "Quantification and Levels of measurement"
+author: "Simon J. Kiss"
+date: "10/03/2020"
+output: slidy_presentation
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+# Quantification and Levels of Measurement
+1. Concepts
+2. Variables
+3. Operationalization
+
+# Concepts
+- Abstractions
+- building blocks of theory 
+- correspond to varying degrees to something in the world.
+
+# Concepts
+Try to define these concepts. 
+
+1. Income
+1. Wealth
+3. Sex / Gender
+3. Province of residence
+
+# Variables
+- Real existing, concrete bits of information
+- Can work with it, record it, read it 
+- Ideally, should correspond as closely as possible to the concept
+
+# Operationalization
+- process of turning concepts into a variable. 
+
+# Levels of Measurement
+- Within science, variables are routinely evaluated as to their: 
+    - validity and
+    - reliability 
+
+# Levels of Measurement
+- Valid measures measure what they claim to measure. 
+- reliable measures return the same results 
+    - a rubber ruler might validly measure distance, but it would do so unreliably. 
+
+# Levels of Measurement 
+1. Numeric
+2. Categorical 
+
+# Levels of Measurement 
+## Numeric
+- Different types of numbers
+    1. continuous - can be divided into decimals
+        - temperature
+        - represented in R with the classes *dbl* or *numeric*
+    2. integer - more like count data 
+        - number of children in the household
+        - represented in R with the classes *int*
+        
+# Levels of Measurement
+## Categorical 
+- Different types of categories
+   1. Unordered
+       - sex
+   2. Ordered
+       - level of education
+       
+- both represented in R as *factor*
+
+# Levels of measurement
+- fundamental to good quantification, because variables must represent their concepts. 
+
+# measures of Central Tendency
+1. Mean
+2. Median 
+3. Mode
+
+
+

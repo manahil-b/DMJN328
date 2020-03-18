@@ -1,0 +1,17 @@
+\contentsline {section}{\numberline {1}Understanding The Hierarchical Nature of Statistics Canada Data}{1}{section.1}% 
+\contentsline {section}{\numberline {2}Geographic Files and Data Files}{1}{section.2}% 
+\contentsline {section}{\numberline {3}Getting a folder for your map assignment}{2}{section.3}% 
+\contentsline {section}{\numberline {4}Using Census Mapper}{2}{section.4}% 
+\contentsline {subsection}{\numberline {4.1}Installing the package and loading the library}{3}{subsection.4.1}% 
+\contentsline {subsection}{\numberline {4.2}Getting an API}{3}{subsection.4.2}% 
+\contentsline {subsection}{\numberline {4.3}Using your API in R}{3}{subsection.4.3}% 
+\contentsline {subsubsection}{\numberline {4.3.1}Temporary}{3}{subsubsection.4.3.1}% 
+\contentsline {subsubsection}{\numberline {4.3.2}Permanent}{4}{subsubsection.4.3.2}% 
+\contentsline {subsubsection}{\numberline {4.3.3}CensusMapper Cache}{4}{subsubsection.4.3.3}% 
+\contentsline {subsection}{\numberline {4.4}Getting the data out of Census Mapper.}{5}{subsection.4.4}% 
+\contentsline {subsubsection}{\numberline {4.4.1}Geography}{5}{subsubsection.4.4.1}% 
+\contentsline {subsection}{\numberline {4.5}Drawing the map}{10}{subsection.4.5}% 
+\contentsline {subsection}{\numberline {4.6}Data}{11}{subsection.4.6}% 
+\contentsline {subsection}{\numberline {4.7}How do we add in a third variable.}{14}{subsection.4.7}% 
+\contentsline {subsection}{\numberline {4.8}Other Sources of Geographical Data}{16}{subsection.4.8}% 
+\contentsline {subsubsection}{\numberline {4.8.1}A note on Federal Electoral Districts}{19}{subsubsection.4.8.1}% 
