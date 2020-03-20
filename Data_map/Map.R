@@ -55,4 +55,13 @@ ggplot(mississauga2, aes(geometry=geometry, fill=n))+ geom_sf()+
 
 #scale_fill_gradient (low=one colour and high= another colour) or scale_fill_destiller (pallet="blue", aesthetic="fill")
 
+### Try this
+##Start with the dataframe
+mississauga2 %>% 
+## form groups of the ethnicities
+  group_by(ethnicity) %>% 
+##Summarize those groups by adding up all the `n` (i.e. how many of those ethnicities there are), remove any missings with na.rm=T
+  summarize(total=sum(n, na.rm=T)) %>% 
+## Arrange in descending order
+  arrange(., desc(total))
 
