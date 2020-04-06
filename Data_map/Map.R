@@ -109,3 +109,60 @@ mississauga2 %>%
 
 
 
+#what simon told you to do -after doing the graph 
+census_data2 <- get_census(dataset='CA16', regions=list(CSD="3521005"), vectors=c("v_CA16_3960","v_CA16_3963","v_CA16_3966","v_CA16_3969","v_CA16_3972","v_CA16_3975","v_CA16_3978","v_CA16_3981","v_CA16_3984","v_CA16_3987","v_CA16_3996"), labels="detailed", geo_format="sf", level='CT')
+head(census_data2)
+glimpse(census_data2)
+
+#rename variables
+mississauga<-rename(census_data2, "southasian"=`v_CA16_3960: South Asian`,"black"=`v_CA16_3966: Black`,"chinese"=`v_CA16_3963: Chinese`,"filipino"=`v_CA16_3969: Filipino`,"latin american"=`v_CA16_3972: Latin American`,"arab"=`v_CA16_3975: Arab`,"southeast asian"=`v_CA16_3978: Southeast Asian`,"west asian"=`v_CA16_3981: West Asian`,"korean"=`v_CA16_3984: Korean`,"japanese"=`v_CA16_3987: Japanese`,"notavisibleminority"=`v_CA16_3996: Not a visible minority`)
+names(mississauga)                   
+
+ggplot(mississauga, aes(geometry=geometry, fill=arab))+geom_sf()    
+ggplot(mississauga, aes(geometry=geometry, fill=chinese))+geom_sf()
+ggplot(mississauga, aes(geometry=geometry, fill=black))+geom_sf()
+ggplot(mississauga, aes(geometry=geometry, fill=southasian))+geom_sf()
+ggplot(mississauga, aes(geometry=geometry, fill=notavisibleminority))+geom_sf()
+
+
+names(mississauga)
+#gather all ethnicities into one graph and change colours
+mississauga2<-gather(mississauga, ethnicity,n,14:24)
+
+#same as above-easier to read
+
+####Somehow downloading census tract data returns one extra column of data so we just need to change the numbers of the ethnicity variables by one.
+
+mississauga %>% 
+  gather(ethnicity,n,15:25)->mississauga2
+
+#do facet command, this gives me little maps of each ethnicity but change colours
+ggplot(mississauga2, aes(geometry=geometry, fill=n))+ geom_sf()+
+  facet_wrap(~ethnicity)+
+  scale_fill_gradient(low="pink", high="pink4")+
+  labs(title ="Different Ethnicities in Mississauga", caption="Cancensus")
+
+#below is the filtering process and remember you need to save at end of each code 
+mississauga2 %>% 
+  filter(ethnicity=="southasian"| ethnicity=="notavisibleminority"| ethnicity=="black")->mississauga3
+
+#how to make it into a percent 
+mississauga3 %>% 
+  mutate(percent=(n/Population)*100)->mississauga4
+
+library(car)
+
+#recoded to make the names easy to read 
+names(mississauga3)
+mississauga4 %>% mutate(Ethnicities=Recode(ethnicity,"'notavisibleminority'='White';
+                                             'black'='Black';'southasian'='South Asian'"))->mississauga5
+mississauga5$Ethnicities
+
+#proper code to get graph
+ggplot(mississauga5, aes(geometry=geometry, fill=percent))+ geom_sf()+
+  facet_wrap(~Ethnicities)+
+  scale_fill_gradient(low="pink", high="pink4")+
+  labs(title ="Different Ethnicities in Mississauga", caption="Cancensus")+
+  theme_void()
+
+
